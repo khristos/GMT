@@ -451,6 +451,13 @@ https://vanillajstoolkit.com/helpers/
 5. Prevent default anchor behavior
 6. Add accordion functionality
 
+  ```html
+  	<p><a class="accordion-toggle" href="#content-3">Show More 3</a></p>
+		<div class="accordion-content" id="content-3">
+			<h2>Corsair</h2>
+			<p>Line Corsair haul wind pink provost hardtack keelhaul hang the jib.</p>
+    </div>
+  ```
   ```javascript
     // Listen for clicks on the document
     document.addEventListener('click', function (event) {
