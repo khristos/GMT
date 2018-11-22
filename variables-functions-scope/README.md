@@ -5,17 +5,17 @@
 1. Function expressions vs. function declarations 
    What's the difference?
   ```javascript
-			// Function declaration
-			function add (num1, num2) {
-				return num1 + num2;
-			}
-			console.log(add(3, 4));
+      // Function declaration
+      function add (num1, num2) {
+        return num1 + num2;
+      }
+      console.log(add(3, 4));
 
       // Function expression
-			var add = function (num1, num2) {
-				return num1 + num2;
-			};
-			console.log(add(3, 4));
+      var add = function (num1, num2) {
+        return num1 + num2;
+      };
+      console.log(add(3, 4));
   ```
 2. Hoisting
   ```javascript
