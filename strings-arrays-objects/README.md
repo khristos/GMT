@@ -1,8 +1,10 @@
 
 # Strings, Arrays, and Objects
 https://courses.gomakethings.com/courses/strings-arrays-objects/
+https://github.com/cferdinandi/string-array-object-source-code/
 https://vanillajstoolkit.com/polyfills/
 https://vanillajstoolkit.com/helpers/
+https://polyfill.io/
 
 ## Remove Whitespace
 1. trim()
@@ -21,26 +23,27 @@ https://vanillajstoolkit.com/helpers/
     ```javascript
         var upper = mixedCase.toUpperCase();
     ```
-3. Title Case  --  https://medium.freecodecamp.org/three-ways-to-title-case-a-sentence-in-javascript-676a9175eb27
-
+3. toTitleCase() - Title Case
+    https://medium.freecodecamp.org/three-ways-to-title-case-a-sentence-in-javascript-676a9175eb27
+    https://vanillajstoolkit.com/helpers/totitlecase/
     ```javascript
         // for loop
-        function titleCase(str) {
+        function toTitleCase(str) {
             str = str.toLowerCase().split(' ');
             for (var i = 0; i < str.length; i++) {
                 str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
             }
             return str.join(' ');
         }
-        titleCase("I'm a little tea pot");
+        toTitleCase("I'm a little tea pot");
 
         // map()
-        function titleCase(str) {
+        function toTitleCase(str) {
             return str.toLowerCase().split(' ').map(function(word) {
                 return (word.charAt(0).toUpperCase() + word.slice(1));
             }).join(' ');
         }
-        titleCase("I'm a little tea pot");
+        toTitleCase("I'm a little tea pot");
 
         // map() and replace()
         function titleCase(str) {
@@ -200,11 +203,12 @@ https://vanillajstoolkit.com/helpers/
         var fewerSandwiches2 = sandwiches.slice(2, 4);
 
         // You can also create a new copy of an entire array with Array.from(). Pass the array to copy in as an argument.
+        // https://vanillajstoolkit.com/polyfills/arrayfrom/
         var sandwiches = ['turkey', 'tuna', 'chicken salad', 'italian', 'blt', 'grilled cheese'];
         var sandwichesCopy = sandwiches.from(sandwiches);
     ```
 
-## Iterate Over Arrays and Transforming Arrays
+## Iterate Over Arrays
 1. Array.every() - 
     Test whether every item in array meets condition
     ```javascript
@@ -232,7 +236,7 @@ https://vanillajstoolkit.com/helpers/
 
 ## Transforming Arrays
 1. Array.forEach() - 
-    Pass a callback function into forEach(). The first argument is the current item in the loop. The second is the current index in the array.
+    Pass a callback function into forEach(). The first argument is the current item in the loop. The second is the current index in the array. https://vanillajstoolkit.com/polyfills/arrayforeach/
     ```javascript
     var sandwiches = ['tuna', 'ham', 'turkey', 'pb&j'];
     sandwiches.forEach(function (sandwich, index) {
@@ -243,6 +247,7 @@ https://vanillajstoolkit.com/helpers/
 2. Array.filter() -
     The Array.filter() method creates a new array with only elements that pass a test you include as a callback function.
     The callback accepts three arguments: the current item in the loop’s value, its index, and the array itself.
+    https://vanillajstoolkit.com/polyfills/arrayfilter/
     ```javascript
     // Create a new array with only numbers greater than 10
     var newArray = [1, 2, 7, 42, 99, 101].filter(function (item) {
@@ -250,7 +255,7 @@ https://vanillajstoolkit.com/helpers/
     });
     // Logs [42, 99, 101]
     ```
-3. Array.map()
+3. Array.map() - https://vanillajstoolkit.com/polyfills/arraymap/
     ```javascript
         /**
          * Double each number in an array
@@ -297,10 +302,7 @@ https://vanillajstoolkit.com/helpers/
     ```
 4. Array.join()
     ```javascript
-        var strings = [
-            'I love Cape Cod potato chips.',
-            'What about you?'
-        ];
+        var strings = [ 'I love Cape Cod potato chips.', 'What about you?' ];
         var concat = strings.join();
         console.log(concat);
         var concatWithSpace = strings.join(' ');
@@ -310,19 +312,267 @@ https://vanillajstoolkit.com/helpers/
     ```
 
 
-
-## Add Items to an Object
-1. Dot and Bracket Notation
+## Add Items to an Object and Merge Objects
+1. Dot and Bracket Notation - Add key/value pairs
     ```javascript
-
+        var lunch = { sandwich: 'turkey', chips: 'cape cod', drink: 'soda' };
+        // Add items to the object
+        lunch.alcohol = false;
+        lunch["dessert"] = 'cookies';
+        // Update a key value
+        lunch.sandwich = 'tuna';
+        // Using a variable
+        var key = 'drink';
+        lunch[key] = 'water';
     ```
-2. Merge Objects
+2. Object.assign - Merge Objects
+    The Object.assign() method performs a shallow merge of
+    two or more objects. Pass in each object to merge as an
+    argument.
+    Note: in a shallow merge, nested objects are overwritten
+    completely rather than having their values merged together.
+    https://vanillajstoolkit.com/polyfills/objectassign/
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Polyfill
     ```javascript
+        // Example objects
+        var object1 = {
+            apple: 0,
+            banana: {
+                weight: 52,
+                price: 100
+            },
+            cherry: 97
+        };
+        var object2 = {
+            banana: {
+                price: 200
+            },
+            durian: 100
+        };
+        var object3 = {
+            apple: 'yum',
+            pie: 3.214,
+            applePie: true
+        };
+        // Merge objects together
+        var mergedObjs = Object.assign(object1, object2, object3);
+        console.log(mergedObjs);
+    ```
+3. extend.js - Merge (deep) two or more objects together
+    https://vanillajstoolkit.com/helpers/extend/
+    ```javascript
+        // Example objects
+        var object1 = {
+            apple: 0,
+            banana: {
+                weight: 52,
+                price: 100
+            },
+            cherry: 97
+        };
+        var object2 = {
+            banana: {
+                price: 200
+            },
+            durian: 100
+        };
+        var object3 = {
+            apple: 'yum',
+            pie: 3.214,
+            applePie: true
+        };
 
+        // Deep extend
+        console.log(extend(object1, object2, object3));
+        // Shallow extend
+        console.log(extend(true, object1, object2, object3));
+        // Clone object1
+        console.log(extend(object1));
     ```
 
 ## Compare
-1. Compare Two Arrays or Objects
+1. isEqual.js - Compare Two Arrays or Objects
+   https://vanillajstoolkit.com/helpers/isequal/
     ```javascript
+        isEqual(arrObject1, arrObject2);
+    ```
+
+## Delete
+1. delete
+    ```javascript
+        // Remove the chips key from the lunch object
+        delete lunch.chips;
+    ```
+
+## Object.keys
+    The Object.keys() method returns an array of keys from an object. Pass in the object as an argument.
+    https://vanillajstoolkit.com/polyfills/objectkeys/
+
+    ```javascript
+        var lunch = {
+            sandwich: 'turkey',
+            chips: 'cape cod',
+            drink: 'soda'
+        };
+        console.log(Object.keys(lunch));
+        Object.keys(lunch).forEach(function (key) {
+            console.log(key); // The key
+            console.log(lunch[key]); // The value
+        });
+    ```
+
+
+## Template Literals
+    ```javascript
+        // Basic template literal
+        var concat = `I love Cape Cod potato chips. What about you?`;
+        console.log(concat);
+        // Template literal with placeholder variables
+        var brand = 'Cape Cod';
+        var person = 'you';
+        var concat2 = `I love ${brand} potato chips. What about ${person}?`;
+        console.log(concat2);
+    ```
+
+## Project
+Getting Setup - Dog listing
+
+    ```html
+    	<h1>Adoptable Dogs</h1>
+        <div id="dogs">Fetching our adoptable dogs...</div>
+    ```
+
+    ```javascript
+        var apiData = [
+            {
+                name: 'Rufus',
+                breeds: [
+                    'Lab',
+                    'German Shepard',
+                    'Border Collie'
+                ],
+                age: 'Adult',
+                size: 'M',
+                gender: 'M',
+                details: 'No Cats, No Dogs',
+                photo: 'img/rufus.jpg',
+                description: '      Hail-shot bounty barque  chase guns. Brigantine gibbet haul wind line.  Barque chandler lookout clap of thunder. Transom hogshead trysail league.  '
+            },
+            {
+                name: 'Kylie Jane',
+                breeds: [
+                    'Shih Tzu'
+                ],
+                age: 'Baby',
+                size: 'S',
+                gender: 'F',
+                details: 'Neutered',
+                photo: 'img/kylie.jpg',
+                description: '   Hands loaded to the gunwalls topgallant long clothes. Crack Jennys tea cup topsail flogging handsomely. Bounty blow the man down nipper pillage. Chantey landlubber or just lubber red ensign warp.'
+            },
+            {
+                name: 'Jacque ',
+                breeds: [
+                    'Chihuahua',
+                    'Rat Terrier'
+                ],
+                age: 'Senior',
+                size: 'S',
+                gender: 'M',
+                details: 'No Cats, No Dogs, Neutered, Special Medical Needs',
+                photo: 'img/jacque.jpg',
+                description: 'Interloper tackle   yo-ho-ho yard. Gangway keelhaul no prey, no pay sheet. Hang the jib snow careen transom. Broadside gabion bilged on her anchor sloop.'
+            },
+            {
+                name: 'Elsa',
+                breeds: [
+                    'Irish Wolfhound',
+                    'Wirehaired Terrier',
+                    'Staffordshire Terrier'
+                ],
+                age: 'Adult',
+                size: 'XL',
+                gender: 'F',
+                details: 'Neutered',
+                photo: 'img/elsa.jpg',
+                description: 'Take a caulk league pink main sheet. Letter of Marque avast coxswain fire in the hole. Yardarm schooner piracy Jack Tar. Yardarm hardtack rutters poop deck.'
+            },
+            {
+                name: 'Colt',
+                breeds: [
+                    'Staffordshire Terrier',
+                    'Dalmation'
+                ],
+                age: 'Baby',
+                size: 'L',
+                gender: 'M',
+                details: '',
+                photo: 'img/colt.jpg',
+                description: '     Come about Nelsons folly  black jack measured fer yer chains.  Hail-shot tack sloop grapple.  Boom sheet spirits man-of-war.  Scuttle bounty hulk sloop.'
+            }
+        ];
+
+        // Create a list of other details
+        var getOtherDetails = function (dogDetails) {
+
+            // If the array is empty, return a messsage
+            if (dogDetails === '') {
+                return ' No additional details.';
+            }
+
+            // Convert the dog details string to an array,
+            // then create a list item for each detail
+            var details = dogDetails.split(', ').map(function (detail) {
+                return '<li>' + detail + '</li>';
+            });
+
+            // Convert the details array into a string and wrap in an unordered list
+            return '<ul>' + details.join('') + '</ul>';
+
+        };
+
+        // Create a list of adoptable dogs
+        var getDogs = function () {
+            // Template
+            // <h2>{Dog Name}</h2>
+            // <p><img alt="A photo of {Dog Name}" src="photo.jpg"></p>
+            //
+            // <p>
+            // 		Age: {age}<br>
+            // 		Size: {size}<br>
+            // 		Gender: {gender}<br>
+            // 		Breeds: {breed1}, {breed2}
+            // </p>
+            //
+            // <strong>Other Details:</strong>
+            // <ul>
+            // 		<li>{detail1: ex. No Cats}</li>
+            // </ul>
+            //
+            // <p>{description}</p>
+            return apiData.map(function (dog) {
+                var html =
+                    '<h2>' + dog.name + '</h2>' +
+
+                    '<p><img alt="A photo of ' + dog.name + '" src="' + dog.photo + '"></p>' +
+
+                    '<p>' +
+                        'Age: ' + dog.age.replace('Baby', 'Puppy') + '<br>' +
+                        'Size: ' + toTitleCase(dog.size.replace('S', 'Small').replace('M', 'Medium').replace('XL', 'very large').replace('L', 'large') + '<br>' +
+                        'Gender: ' + dog.gender.replace('M', 'Male').replace('F', 'Female')) + '<br>' +
+                        'Breeds: ' + dog.breeds.join(', ') +
+                    '</p>' +
+
+                    '<strong>Other Details:</strong>' + getOtherDetails(dog.details) +
+
+                    '<p>' + dog.description.replace('  ', ' ') + '</p>';
+
+                return html;
+            }).join('');
+        };
+
+        // Get the app and generate the HTML
+        var app = document.querySelector('#dogs');
+        app.innerHTML = getDogs();
 
     ```
