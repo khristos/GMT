@@ -331,7 +331,7 @@ https://polyfill.io/
     argument.  
     Note: in a shallow merge, nested objects are overwritten
     completely rather than having their values merged together.  
-    https://vanillajstoolkit.com/polyfills/objectassign/
+    https://vanillajstoolkit.com/polyfills/objectassign/  
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Polyfill
     ```javascript
         // Example objects
