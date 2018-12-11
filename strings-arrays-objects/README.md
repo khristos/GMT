@@ -1,10 +1,10 @@
 
 # Strings, Arrays, and Objects
-https://courses.gomakethings.com/courses/strings-arrays-objects/
-https://github.com/cferdinandi/string-array-object-source-code/
-https://vanillajstoolkit.com/polyfills/
-https://vanillajstoolkit.com/helpers/
-https://polyfill.io/
+https://courses.gomakethings.com/courses/strings-arrays-objects/  
+https://github.com/cferdinandi/string-array-object-source-code/  
+https://vanillajstoolkit.com/polyfills/  
+https://vanillajstoolkit.com/helpers/  
+https://polyfill.io/  
 
 ## Remove Whitespace
 1. trim()
@@ -23,8 +23,8 @@ https://polyfill.io/
     ```javascript
         var upper = mixedCase.toUpperCase();
     ```
-3. toTitleCase() - Title Case
-    https://medium.freecodecamp.org/three-ways-to-title-case-a-sentence-in-javascript-676a9175eb27
+3. toTitleCase() - Title Case  
+    https://medium.freecodecamp.org/three-ways-to-title-case-a-sentence-in-javascript-676a9175eb27  
     https://vanillajstoolkit.com/helpers/totitlecase/
     ```javascript
         // for loop
@@ -331,7 +331,7 @@ https://polyfill.io/
     argument.  
     Note: in a shallow merge, nested objects are overwritten
     completely rather than having their values merged together.  
-    https://vanillajstoolkit.com/polyfills/objectassign/
+    https://vanillajstoolkit.com/polyfills/objectassign/  
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Polyfill
     ```javascript
         // Example objects
@@ -405,7 +405,8 @@ https://polyfill.io/
     ```
 
 ## Object.keys
-    The Object.keys() method returns an array of keys from an object. Pass in the object as an argument.  
+    The Object.keys() method returns an array of keys from an object.
+    Pass in the object as an argument.  
     https://vanillajstoolkit.com/polyfills/objectkeys/
 
     ```javascript
