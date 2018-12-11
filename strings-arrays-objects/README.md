@@ -328,9 +328,9 @@ https://polyfill.io/
 2. Object.assign - Merge Objects
     The Object.assign() method performs a shallow merge of
     two or more objects. Pass in each object to merge as an
-    argument.
+    argument.  
     Note: in a shallow merge, nested objects are overwritten
-    completely rather than having their values merged together.
+    completely rather than having their values merged together.  
     https://vanillajstoolkit.com/polyfills/objectassign/
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Polyfill
     ```javascript
@@ -358,8 +358,8 @@ https://polyfill.io/
         var mergedObjs = Object.assign(object1, object2, object3);
         console.log(mergedObjs);
     ```
-3. extend.js - Merge (deep) two or more objects together
-    https://vanillajstoolkit.com/helpers/extend/
+3. extend.js - Merge (deep) two or more objects together  
+    https://vanillajstoolkit.com/helpers/extend/ 
     ```javascript
         // Example objects
         var object1 = {
@@ -391,8 +391,8 @@ https://polyfill.io/
     ```
 
 ## Compare
-1. isEqual.js - Compare Two Arrays or Objects
-   https://vanillajstoolkit.com/helpers/isequal/
+1. isEqual.js - Compare Two Arrays or Objects  
+    https://vanillajstoolkit.com/helpers/isequal/
     ```javascript
         isEqual(arrObject1, arrObject2);
     ```
@@ -405,7 +405,7 @@ https://polyfill.io/
     ```
 
 ## Object.keys
-    The Object.keys() method returns an array of keys from an object. Pass in the object as an argument.
+    The Object.keys() method returns an array of keys from an object. Pass in the object as an argument.  
     https://vanillajstoolkit.com/polyfills/objectkeys/
 
     ```javascript
