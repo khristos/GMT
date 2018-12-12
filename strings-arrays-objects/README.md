@@ -424,6 +424,7 @@ https://polyfill.io/
 
 
 ## Template Literals
+
     ```javascript
         // Basic template literal
         var concat = `I love Cape Cod potato chips. What about you?`;
@@ -439,7 +440,7 @@ https://polyfill.io/
 1. Getting Setup - Dog listing
 
     ```html
-    	<h1>Adoptable Dogs</h1>
+        <h1>Adoptable Dogs</h1>
         <div id="dogs">Fetching our adoptable dogs...</div>
     ```
 
