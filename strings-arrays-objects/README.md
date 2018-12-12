@@ -405,9 +405,7 @@ https://polyfill.io/
     ```
 
 ## Object.keys
-    The Object.keys() method returns an array of keys from an object.
-    Pass in the object as an argument.  
-    https://vanillajstoolkit.com/polyfills/objectkeys/
+
 
     ```javascript
         var lunch = {
