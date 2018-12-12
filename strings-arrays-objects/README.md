@@ -424,7 +424,7 @@ https://polyfill.io/
 
 
 ## Template Literals
-
+1.  Template Literals
     ```javascript
         // Basic template literal
         var concat = `I love Cape Cod potato chips. What about you?`;
