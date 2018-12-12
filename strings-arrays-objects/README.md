@@ -405,7 +405,7 @@ https://polyfill.io/
     ```
 
 ## Object.keys
-    The Object.keys() method returns an array of keys from an object.
+1.  The Object.keys() method returns an array of keys from an object.
     Pass in the object as an argument.  
     https://vanillajstoolkit.com/polyfills/objectkeys/
 
@@ -436,7 +436,7 @@ https://polyfill.io/
     ```
 
 ## Project
-Getting Setup - Dog listing
+1. Getting Setup - Dog listing
 
     ```html
     	<h1>Adoptable Dogs</h1>
